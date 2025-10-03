@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+  <ul>
+    <li>Inicio</li>
+    <li>
+      Servicios
+      <ul class="dropdown">
+        <li>Diseño Web</li>
+        <li>Marketing</li>
+        <li>SEO</li>
+      </ul>
+    </li>
+    <li>Contacto</li>
+  </ul>
+</nav>
+
+<style>
+/* --- NAV PRINCIPAL --- */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+  justify-content: flex-end;
+}
+
+nav li {
+  position: relative; /* importante para el dropdown */
+  font-variant-caps: all-small-caps;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+nav li:hover {
+  color: var(--text);
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+/* --- DROPDOWN --- */
+nav .dropdown {
+  display: none; /* oculto por defecto */
+  position: absolute;
+  top: 100%; /* aparece debajo del li */
+  left: 0;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 10px 0;
+  list-style: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 160px;
+  z-index: 100;
+}
+
+nav .dropdown li {
+  padding: 8px 16px;
+  white-space: nowrap; /* evita que el texto se corte */
+  color: var(--muted);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav .dropdown li:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- Mostrar dropdown al pasar el mouse --- */
+nav li:hover > .dropdown {
+  display: block;
+}
+</style>
+
+</body>
+</html>
